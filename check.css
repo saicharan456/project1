@@ -1,0 +1,19 @@
+button{
+	padding: 25px;
+	padding-right: 50px;
+	padding-left: 50px;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: #2196F3;
+	border-style: none;
+	outline-style: none;
+	font-size: 25px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+}
+button:hover{
+	box-shadow: 5px 5px 10px black;
+}
+button:focus{
+	background-color: #1565C0;
+}

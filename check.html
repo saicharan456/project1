@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="project.css">
+</head>
+<body ng-app="myapp" style="background-color: #E0E0E0">
+<div ng-controller="mycontroller"></div>
+<div ng-include="index.html"></div>
+<center><button>Proceed to checkout</button></center>
+<marquee>this is the final page and you don't get any response when you click the checkout button</marquee>
+</body>
+<footer>&copy <b>Gurram Sai Charan</b></footer>
+</html>
+<script type="text/javascript">
+	var app=angular.module('myapp',[])
+	app.controller('mycontroller',function($scope){}]
+	$scope.desiredLocation = myService.get();
+});
+</script>

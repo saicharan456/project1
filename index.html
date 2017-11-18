@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Roboto" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="project.css">
+</head>
+<body ng-app="myApp" ng-controller="myCont">
+	<div class="hea">
+	By product: <select ng-model="product">
+		<option>select product</option>
+		<option value="sp1">cricket</option>
+		<option value="sp2">football</option>
+		<option value="sp3">tennis</option>
+	</select>
+	<input type="text" ng-model="searchText">
+	<br>
+	</div>
+	<hr>
+	<table  width="100%" >
+		<tr ng-repeat="print in products | orderBy:product | filter:searchText">
+			<td><img src="{{print.img}}" alt="{{print.name}}" width="230px" height="300px" >
+			<div class="name"><b>{{print.name}}</b></div>
+			<div><p><i>Buy at:</i>&nbsp<b>{{print.price}}</b><span>&nbsp<del>&#8377<b style="font-size:80%;">{{print.old}}</b></del></span></p></div>
+			<input type="submit" value="BUY" data-ng-click="redirect()"><br>
+			<br>
+			<hr>
+			&nbsp
+			</td>
+		</tr>
+			</table>
+</div> 
+</body>
+</html>
+<script type="text/javascript">
+	var app=angular
+	          .module("myApp",[])
+	          .controller("myCont",function($scope){
+		var products=[
+		{name:"MRF cricket bat",price:800,old:1200, img:"cricket.jpg",sp1:"crc"},
+		{name:"SS cricket bat",price:1800,old:2400 ,img:"ss.jpg",sp1:"crc"},
+		{name:"TON cricket bat",price:2500,old:3200 ,img:"ton.jpg",sp1:"crc"},
+		{name:"nivia football",price:800,old:1400, img:"nivia.jpeg",sp2:"fb"},
+		{name:"kobo football yellow gloves",price:1800,old:2200, img:"boko.jpeg",sp2:"fb"},
+		{name:"kobo football gloves",price:2500,old:3400, img:"kobo.jpeg",sp2:"fb"},
+		{name:"babolat tennis bat",price:800,old:1600,img:"babolat.jpg",sp3:"ten"},
+		{name:"barbie tennis bat",price:1800,old:2300, img:"barbie.jpg",sp3:"ten"},
+		];
+		$scope.products=products;
+		$scope.product="sp1";
+		$scope.redirect = function(){
+         window.location = "check.html";
+}
+	});
+</script>
